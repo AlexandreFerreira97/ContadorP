@@ -9,21 +9,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  int count = 0;
 
   void decrement() {
-    print('Decrement');
+    count--;
+    print(count);
   }
 
   void increment() {
-    print('increment');
+    count++;
+    print(count);
   }
 
   @override
@@ -41,11 +45,11 @@ class HomePage extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(40),
+          Padding(
+            padding: const EdgeInsets.all(40),
             child: Text(
-              '0',
-              style: TextStyle(
+              '$count',
+              style: const TextStyle(
                 fontSize: 100,
                 color: Colors.white,
               ),
