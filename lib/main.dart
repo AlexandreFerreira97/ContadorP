@@ -15,18 +15,27 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   int count = 0;
 
   void decrement() {
-    count--;
+    setState(() {
+      count--;
+    });
     print(count);
   }
 
   void increment() {
-    count++;
+    setState(() {
+      count++;
+    });
     print(count);
   }
 
@@ -102,3 +111,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+
